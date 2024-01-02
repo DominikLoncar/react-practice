@@ -1,9 +1,19 @@
 import './App.css';
 
+function SomeText() {
+  return (
+    <div>
+      <p>p1</p>
+      <p>p2</p>
+    </div>
+    )
+}
+
 function App() {
   return (
     <div className="App">
-      <p> Test.</p>      
+      <p>Test.</p>    
+      <SomeText />  
     </div>
   );
 }

@@ -12,7 +12,7 @@ function SomeText() {
 function App() {
   return (
     <div className="App">
-      <p>Test.</p>    
+      <p>Paragraph before.</p>    
       <SomeText />  
     </div>
   );

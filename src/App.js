@@ -12,12 +12,12 @@ function SomeText({p1, p2}) {
 
 function App() {
 
-  const [p1, setP1] = useState("Some p1 text...");
+  const [p1, setP1] = useState(0);
 
   return (
     <div className="App">
       <p>Paragraph before.</p>    
-      <p onClick={() => setP1("Updated p1 text.")}> {p1} </p>  
+      <p onClick={() => setP1(p1+1)}> {`Clicked ${p1} times.`} </p>  
     </div>
   );
 }

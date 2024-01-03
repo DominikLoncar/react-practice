@@ -17,6 +17,7 @@ function SomeText({style={}}) {
         id='number'
         type='number'
         onChange={handleInputChange}
+        value={count}
       />
     </div>
     )

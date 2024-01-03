@@ -10,7 +10,11 @@ function SomeText({style={}}) {
 
   return (
     <div style={style}>
-      <p onClick={handleDoubling}>Double it! {count}</p>
+      <p onClick={handleDoubling}>Double the input! <b>{count}</b></p>
+      <input 
+        id='number'
+        type='number'
+      />
     </div>
     )
 }

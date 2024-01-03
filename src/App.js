@@ -6,9 +6,11 @@ function SomeText({style={}}) {
   
   const [count, setCount] = useState(2);
 
+  const handleDoubling = () => setCount(c => c*2);
+
   return (
     <div style={style}>
-      <p onClick={() => setCount(num => num*2)}>Double it! {count}</p>
+      <p onClick={handleDoubling}>Double it! {count}</p>
     </div>
     )
 }

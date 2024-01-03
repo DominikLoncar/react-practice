@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 
-function SomeText({p1, style={}}) {
+function SomeText({style={}}) {
   
+  const [count, setCount] = useState(2);
+
   return (
     <div style={style}>
-      <p>Double it! {p1}</p>
+      <p onClick={() => setCount(num => num*2)}>Double it! {count}</p>
     </div>
     )
 }

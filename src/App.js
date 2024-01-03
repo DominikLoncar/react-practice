@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
+// Double the input
 
 function SomeText({style={}}) {
   
   const [count, setCount] = useState(2);
 
   const handleDoubling = () => setCount(c => c*2);
+  const handleInputChange = e => setCount(e.target.value*2);
 
   return (
     <div style={style}>
@@ -14,6 +16,7 @@ function SomeText({style={}}) {
       <input 
         id='number'
         type='number'
+        onChange={handleInputChange}
       />
     </div>
     )

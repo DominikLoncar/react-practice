@@ -6,7 +6,9 @@ function SomeText({style={}}) {
   
   const [count, setCount] = useState(2);
 
-  const handleDoubling = () => setCount(c => c*2);
+  function handleDoubling() {
+     return setCount(c => c*2);
+  }
 
   return (
     <div style={style}>

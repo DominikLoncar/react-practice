@@ -1,7 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext, createContext } from 'react';
+import { userNameContext } from './components/Contexts';
+import SayBye from './components/SayBye';
 import './App.css';
 
 // Double the input
+
 
 function SomeText({style={}}) {
   
@@ -23,17 +26,35 @@ function SomeText({style={}}) {
     )
 }
 
+// Greet, context, pass username
+
 function App() {
+
+
 
   const [p1, setP1] = useState(0);
 
   return (
     <div className="App">
+      <userNameContext.Provider value={"Dom"}>
+        <Greet />
+      </userNameContext.Provider>
+
       <p>Paragraph before.</p>    
       <p onClick={() => setP1(p1+1)}> {`Clicked ${p1} times.`} </p>  
       <SomeText p1={p1} style={{backgroundColor: "black", color: "white", paddingTop: "20px", paddingBottom: "20px"}} />
     </div>
   );
 }
+
+
+const Greet = () => {
+  const userName = useContext(userNameContext);
+  return (<>
+    <h1>Hi {userName}</h1>
+    <SayBye />
+  </>);
+}
+
 
 export default App;

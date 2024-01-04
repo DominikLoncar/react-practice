@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, createContext } from 'react';
+import { useState, useContext, useRef } from 'react';
 import { userNameContext } from './components/Contexts';
 import SayBye from './components/SayBye';
 import './App.css';
@@ -43,6 +43,8 @@ function App() {
       <p>Paragraph before.</p>    
       <p onClick={() => setP1(p1+1)}> {`Clicked ${p1} times.`} </p>  
       <SomeText p1={p1} style={{backgroundColor: "black", color: "white", paddingTop: "20px", paddingBottom: "20px"}} />
+      <RefExample />
+      <RefExample />
     </div>
   );
 }
@@ -54,6 +56,16 @@ const Greet = () => {
     <h1>Hi {userName}</h1>
     <SayBye />
   </>);
+}
+
+const RefExample = () => {
+  let count = useRef(0);
+  const handleIncrement = () => {
+    count.current++
+    console.log(`Count: ${count.current}`);
+  }
+
+  return (<h3 onClick={handleIncrement}>Ref example.</h3>)
 }
 
 
